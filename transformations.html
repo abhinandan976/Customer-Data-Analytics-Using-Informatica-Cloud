@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETL Transformations - Customer Data Analytics</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter bg-gradient-to-br from-black to-purple-950 text-gray-300">
+  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Customer Data Analytics</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Overview</a>
+        <a href="data-schema.html" class="text-gray-300 hover:text-purple-400 transition">Data Schema</a>
+        <a href="transformations.html" class="text-gray-300 hover:text-purple-400 transition">Transformations</a>
+        <a href="business-solutions.html" class="text-gray-300 hover:text-purple-400 transition">Business Solutions</a>
+        <a href="analytics.html" class="text-gray-300 hover:text-purple-400 transition">Analytics</a>
+        <a href="insights.html" class="text-gray-300 hover:text-purple-400 transition">Insights</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden p-2">
+        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-black shadow-lg">
+      <a href="index.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Overview</a>
+      <a href="data-schema.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Data Schema</a>
+      <a href="transformations.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Transformations</a>
+      <a href="business-solutions.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Business Solutions</a>
+      <a href="analytics.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Analytics</a>
+      <a href="insights.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Insights</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-16">
+    <section class="hero text-center py-16 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-2xl shadow-2xl">
+      <h2 class="text-4xl font-extrabold mb-4">ETL Transformations</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">Discover how our ETL pipeline transforms raw data into actionable insights using Informatica Cloud.</p>
+    </section>
+
+    <section class="my-12 card bg-transparent p-6 rounded-xl">
+      <h2 class="text-3xl font-bold text-white mb-6">ETL Transformations</h2>
+      <p class="text-gray-300 mb-4">The heart of our customer analytics project lies in the ETL pipeline built using Informatica Cloud. Multiple transformations were applied to extract meaningful and accurate information from raw customer data. Each transformation stage contributed to creating a unified dataset suitable for downstream analytics.</p>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold text-purple-300 mb-2">1️⃣ Joiner Transformation</h3>
+          <p class="text-gray-300">The Joiner transformation was used to merge CRM customer data and e-commerce purchases based on the customer_id. This created a comprehensive view of each customer with their purchase history.</p>
+          <ul class="list-disc list-inside text-gray-300 mt-2">
+            <li>Type: Inner Join</li>
+            <li>Fields: customer_id</li>
+            <li>Output: Enriched customer profiles with purchase records</li>
+          </ul>
+          <h4 class="text-lg font-semibold text-purple-300 mt-4 mb-2">Simulated Output</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full visible-table">
+              <thead>
+                <tr>
+                  <th>eco_order_id</th>
+                  <th>eco_customer_id</th>
+                  <th>eco_product_id</th>
+                  <th>eco_amount</th>
+                  <th>eco_purchase_date</th>
+                  <th>eco_payment_method</th>
+                  <th>eco_Total_amount</th>
+                  <th>eco_last_purchase_date</th>
+                  <th>cmr_customer_id</th>
+                  <th>cmr_email</th>
+                  <th>cmr_phone_number</th>
+                  <th>cmr_created_date</th>
+                  <th>cmr_country</th>
+                  <th>cmr_Full_Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD009</td>
+                  <td>CUST001</td>
+                  <td>PROD08</td>
+                  <td>217.82</td>
+                  <td>25-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>530.40</td>
+                  <td>25-05-2025</td>
+                  <td>CUST001</td>
+                  <td>alice@example.com</td>
+                  <td>1234567890</td>
+                  <td>01-01-2023</td>
+                  <td>USA</td>
+                  <td>Jagannath Malode</td>
+                </tr>
+                <tr>
+                  <td>ORD010</td>
+                  <td>CUST002</td>
+                  <td>PROD09</td>
+                  <td>389.43</td>
+                  <td>26-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>389.43</td>
+                  <td>26-05-2025</td>
+                  <td>CUST002</td>
+                  <td>bob@example.com</td>
+                  <td>1987654321</td>
+                  <td>02-01-2023</td>
+                  <td>UK</td>
+                  <td>Varun Gani</td>
+                </tr>
+                <tr>
+                  <td>ORD007</td>
+                  <td>CUST003</td>
+                  <td>PROD06</td>
+                  <td>259.03</td>
+                  <td>23-05-2025</td>
+                  <td>Debit Card</td>
+                  <td>1012.80</td>
+                  <td>23-05-2025</td>
+                  <td>CUST003</td>
+                  <td>charlie@example.com</td>
+                  <td>1472583690</td>
+                  <td>03-01-2023</td>
+                  <td>Canada</td>
+                  <td>Charlie Brown</td>
+                </tr>
+                <tr>
+                  <td>ORD004</td>
+                  <td>CUST004</td>
+                  <td>PROD03</td>
+                  <td>194.68</td>
+                  <td>20-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>669.64</td>
+                  <td>20-05-2025</td>
+                  <td>CUST004</td>
+                  <td>david@example.com</td>
+                  <td>1122334455</td>
+                  <td>04-01-2023</td>
+                  <td>USA</td>
+                  <td>David Wilson</td>
+                </tr>
+                <tr>
+                  <td>ORD008</td>
+                  <td>CUST005</td>
+                  <td>PROD07</td>
+                  <td>355.88</td>
+                  <td>24-05-2025</td>
+                  <td>PayPal</td>
+                  <td>355.88</td>
+                  <td>24-05-2025</td>
+                  <td>CUST005</td>
+                  <td>eva@example.com</td>
+                  <td>1098765432</td>
+                  <td>05-01-2023</td>
+                  <td>Australia</td>
+                  <td>Eva Taylor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-purple-300 mb-2">2️⃣ Union Transformation</h3>
+          <p class="text-gray-300">Support tickets and marketing contact data were combined using the Union transformation to create a single timeline of customer interactions.</p>
+          <ul class="list-disc list-inside text-gray-300 mt-2">
+            <li>Sources: support_tickets.csv + marketing_contacts.csv</li>
+            <li>Fields: customer_id, interaction_date, action_type</li>
+            <li>Output: Unified customer interaction timeline</li>
+          </ul>
+          <h4 class="text-lg font-semibold text-purple-300 mt-4 mb-2">Simulated Output</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full visible-table">
+              <thead>
+                <tr>
+                  <th>interaction_channel</th>
+                  <th>interaction_type</th>
+                  <th>customer_id</th>
+                  <th>interaction_date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td>Marketing</td>
+                  <td>CUST001</td>
+                  <td>03-02-2024</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>Marketing</td>
+                  <td>CUST003</td>
+                  <td>04-02-2024</td>
+                </tr>
+                <tr>
+                  <td>Login</td>
+                  <td>Support</td>
+                  <td>CUST005</td>
+                  <td>03-01-2024</td>
+                </tr>
+                <tr>
+                  <td>Payment</td>
+                  <td>Support</td>
+                  <td>CUST005</td>
+                  <td>04-01-2024</td>
+                </tr>
+                <tr>
+                  <td>Payment</td>
+                  <td>Support</td>
+                  <td>CUST005</td>
+                  <td>05-01-2024</td>
+                </tr>
+                <tr>
+                  <td>SMS</td>
+                  <td>Marketing</td>
+                  <td>CUST002</td>
+                  <td>01-02-2024</td>
+                </tr>
+                <tr>
+                  <td>SMS</td>
+                  <td>Marketing</td>
+                  <td>CUST002</td>
+                  <td>05-02-2024</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Support</td>
+                  <td>CUST004</td>
+                  <td>01-01-2024</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Support</td>
+                  <td>CUST005</td>
+                  <td>02-01-2024</td>
+                </tr>
+                <tr>
+                  <td>Social Media</td>
+                  <td>Marketing</td>
+                  <td>CUST003</td>
+                  <td>02-02-2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-purple-300 mb-2">3️⃣ Sorter Transformation</h3>
+          <p class="text-gray-300">The combined interaction data was sorted using the Sorter transformation to arrange interactions in chronological order.</p>
+          <ul class="list-disc list-inside text-gray-300 mt-2">
+            <li>Sort Keys: customer_id (ASC), interaction_date (DESC)</li>
+            <li>Purpose: Enables sequential behavioral analysis</li>
+          </ul>
+          <h4 class="text-lg font-semibold text-purple-300 mt-4 mb-2">Simulated Output</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full visible-table">
+              <thead>
+                <tr>
+                  <th>customer_id</th>
+                  <th>email</th>
+                  <th>phone_number</th>
+                  <th>created_date</th>
+                  <th>country</th>
+                  <th>Full_Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CUST001</td>
+                  <td>alice@example.com</td>
+                  <td>1234567890</td>
+                  <td>01-01-2023</td>
+                  <td>USA</td>
+                  <td>Jagannath Malode</td>
+                </tr>
+                <tr>
+                  <td>CUST002</td>
+                  <td>bob@example.com</td>
+                  <td>1987654321</td>
+                  <td>02-01-2023</td>
+                  <td>UK</td>
+                  <td>Varun Gani</td>
+                </tr>
+                <tr>
+                  <td>CUST003</td>
+                  <td>charlie@example.com</td>
+                  <td>1472583690</td>
+                  <td>03-01-2023</td>
+                  <td>Canada</td>
+                  <td>Charlie Brown</td>
+                </tr>
+                <tr>
+                  <td>CUST004</td>
+                  <td>david@example.com</td>
+                  <td>1122334455</td>
+                  <td>04-01-2023</td>
+                  <td>USA</td>
+                  <td>Abhinandan Onajol</td>
+                </tr>
+                <tr>
+                  <td>CUST005</td>
+                  <td>eva@example.com</td>
+                  <td>1098765432</td>
+                  <td>05-01-2023</td>
+                  <td>Australia</td>
+                  <td>Eva Taylor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-purple-300 mb-2">4️⃣ Aggregator Transformation</h3>
+          <p class="text-gray-300">To derive customer-level metrics, the Aggregator transformation was applied on the joined dataset.</p>
+          <ul class="list-disc list-inside text-gray-300 mt-2">
+            <li>Metrics:</li>
+            <li>SUM(amount) → Total Spent</li>
+            <li>COUNT</li>
+            <li>MAX(purchase_date) → Last Purchase</li>
+          </ul>
+        <h4 class="text-lg font-semibold text-purple-300 mt-4 mb-2">Simulated Output</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full visible-table">
+              <thead>
+                <tr>
+                  <th>order_id</th>
+                  <th>customer_id</th>
+                  <th>product_id</th>
+                  <th>amount</th>
+                  <th>purchase_date</th>
+                  <th>payment_method</th>
+                  <th>Total_amount</th>
+                  <th>last_purchase_date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD009</td>
+                  <td>CUST001</td>
+ культури id="PROD08"></td>
+                  <td>217.82</td>
+                  <td>25-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>530.40</td>
+                  <td>25-05-2025</td>
+                </tr>
+                <tr>
+                  <td>ORD010</td>
+                  <td>CUST002</td>
+                  <td>PROD09</td>
+                  <td>389.43</td>
+                  <td>26-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>389.43</td>
+                  <td>26-05-2025</td>
+                </tr>
+                <tr>
+                  <td>ORD007</td>
+                  <td>CUST003</td>
+                  <td>PROD06</td>
+                  <td>259.03</td>
+                  <td>23-05-2025</td>
+                  <td>Debit Card</td>
+                  <td>1012.80</td>
+                  <td>23-05-2025</td>
+                </tr>
+                <tr>
+                  <td>ORD004</td>
+                  <td>CUST004</td>
+                  <td>PROD03</td>
+                  <td>194.68</td>
+                  <td>20-05-2025</td>
+                  <td>Credit Card</td>
+                  <td>669.64</td>
+                  <td>20-05-2025</td>
+                </tr>
+                <tr>
+                  <td>ORD008</td>
+                  <td>CUST005</td>
+                  <td>PROD07</td>
+                  <td>355.88</td>
+                  <td>24-05-2025</td>
+                  <td>PayPal</td>
+                  <td>355.88</td>
+                  <td>24-05-2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-purple-300 mt-8 mb-4">Final Output</h3>
+      <p class="text-gray-300">The final output was a clean, unified, analytics-ready customer dataset containing demographics, purchases, support history, and marketing engagement data — all connected via customer_id.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full visible-table">
+          <thead>
+            <tr>
+              <th>interaction_channel</th>
+              <th>interaction_type</th>
+              <th>customer_id</th>
+              <th>interaction_date</th>
+              <th>eco_order_id</th>
+              <td>eco_customer_id</td>
+              <th>eco_product_id</th>
+              <th>eco_amount</th>
+              <th>eco_purchase_date</th>
+              <th>eco_payment_method</th>
+              <th>eco_Total_amount</th>
+              <th>eco_last_purchase_date</th>
+              <th>cmr_customer_id</th>
+              <th>cmr_email</th>
+              <th>cmr_phone_number</th>
+              <th>cmr_created_date</th>
+              <th>cmr_country</th>
+              <th>cmr_Full_Name</th>
+            </tr>
+          </thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td>Marketing</td>
+              <td>CUST001</td>
+              <td>03-02-2024</td>
+              <td>ORD009</td>
+              <td>CUST001</td>
+              <td>PROD08</td>
+              <td>217.82</td>
+              <td>25-05-2025</td>
+              <td>Credit Card</td>
+              <td>530.40</td>
+              <td>25-05-2025</td>
+              <td>CUST001</td>
+              <td>alice@example.com</td>
+              <td>1234567890</td>
+              <td>01-01-2023</td>
+              <td>USA</td>
+              <td>Jagannath Malode</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>Marketing</td>
+              <td>CUST003</td>
+              <td>04-02-2024</td>
+              <td>ORD007</td>
+              <td>CUST003</td>
+              <td>PROD06</td>
+              <td>259.03</td>
+              <td>23-05-2025</td>
+              <td>Debit Card</td>
+              <td>1012.80</td>
+              <td>23-05-2025</td>
+              <td>CUST003</td>
+              <td>charlie@example.com</td>
+              <td>1472583690</td>
+              <td>03-01-2023</td>
+              <td>Canada</td>
+              <td>Charlie Brown</td>
+            </tr>
+            <tr>
+              <td>Login</td>
+              <td>Support</td>
+              <td>CUST005</td>
+              <td>03-01-2024</td>
+              <td>ORD008</td>
+              <td>CUST005</td>
+              <td>PROD07</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>PayPal</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>CUST005</td>
+              <td>eva@example.com</td>
+              <td>1098765432</td>
+              <td>05-01-2023</td>
+              <td>Australia</td>
+              <td>Eva Taylor</td>
+            </tr>
+            <tr>
+              <td>Payment</td>
+              <td>Support</td>
+              <td>CUST005</td>
+              <td>04-01-2024</td>
+              <td>ORD008</td>
+              <td>CUST005</td>
+              <td>PROD07</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>PayPal</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>CUST005</td>
+              <td>eva@example.com</td>
+              <td>1098765432</td>
+              <td>05-01-2023</td>
+              <td>Australia</td>
+              <td>Eva Taylor</td>
+            </tr>
+            <tr>
+              <td>Payment</td>
+              <td>Support</td>
+              <td>CUST005</td>
+              <td>05-01-2024</td>
+              <td>ORD008</td>
+              <td>CUST005</td>
+              <td>PROD07</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>PayPal</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>CUST005</td>
+              <td>eva@example.com</td>
+              <td>1098765432</td>
+              <td>05-01-2023</td>
+              <td>Australia</td>
+              <td>Eva Taylor</td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Marketing</td>
+              <td>CUST002</td>
+              <td>01-02-2024</td>
+              <td>ORD010</td>
+              <td>CUST002</td>
+              <td>PROD09</td>
+              <td>389.43</td>
+              <td>26-05-2025</td>
+              <td>Credit Card</td>
+              <td>389.43</td>
+              <td>26-05-2025</td>
+              <td>CUST002</td>
+              <td>bob@example.com</td>
+              <td>1987654321</td>
+              <td>02-01-2023</td>
+              <td>UK</td>
+              <td>Varun Gani</td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Marketing</td>
+              <td>CUST002</td>
+              <td>05-02-2024</td>
+              <td>ORD010</td>
+              <td>CUST002</td>
+              <td>PROD09</td>
+              <td>389.43</td>
+              <td>26-05-2025</td>
+              <td>Credit Card</td>
+              <td>389.43</td>
+              <td>26-05-2025</td>
+              <td>CUST002</td>
+              <td>bob@example.com</td>
+              <td>1987654321</td>
+              <td>02-01-2023</td>
+              <td>UK</td>
+              <td>Varun Gani</td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>Support</td>
+              <td>CUST004</td>
+              <td>01-01-2024</td>
+              <td>ORD004</td>
+              <td>CUST004</td>
+              <td>PROD03</td>
+              <td>194.68</td>
+              <td>20-05-2025</td>
+              <td>Credit Card</td>
+              <td>669.64</td>
+              <td>20-05-2025</td>
+              <td>CUST004</td>
+              <td>david@example.com</td>
+              <td>1122334455</td>
+              <td>04-01-2023</td>
+              <td>USA</td>
+              <td>David Wilson</td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>Support</td>
+              <td>CUST005</td>
+              <td>02-01-2024</td>
+              <td>ORD008</td>
+              <td>CUST005</td>
+              <td>PROD07</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>PayPal</td>
+              <td>355.88</td>
+              <td>24-05-2025</td>
+              <td>CUST005</td>
+              <td>eva@example.com</td>
+              <td>1098765432</td>
+              <td>05-01-2023</td>
+              <td>Australia</td>
+              <td>Eva Taylor</td>
+            </tr>
+            <tr>
+              <td>Social Media</td>
+              <td>Marketing</td>
+              <td>CUST003</td>
+              <td>02-02-2024</td>
+              <td>ORD007</td>
+              <td>CUST003</td>
+              <td>PROD06</td>
+              <td>259.03</td>
+              <td>23-05-2025</td>
+              <td>Debit Card</td>
+              <td>1012.80</td>
+              <td>23-05-2025</td>
+              <td>CUST003</td>
+              <td>charlie@example.com</td>
+              <td>1472583690</td>
+              <td>03-01-2023</td>
+              <td>Canada</td>
+              <td>Charlie Brown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-black text-gray-300 py-6 text-center">
+    <p>© 2025 Abhinandan Onajol & Team</p>
+  </footer>
+
+  <script>
+    // GSAP Animations
+    gsap.from(".hero", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+    gsap.from(".card", { duration: 1, y: 30, opacity: 0, stagger: 0.2, ease: "power3.out", delay: 0.5 });
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      gsap.from(mobileMenu.children, { duration: 0.3, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out" });
+    });
+  </script>
+</body>
+</html>

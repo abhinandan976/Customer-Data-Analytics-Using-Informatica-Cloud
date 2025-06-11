@@ -1,0 +1,32 @@
+body {
+  @apply min-h-screen;
+}
+
+.visible-table {
+  @apply border border-purple-500 text-base font-medium;
+}
+
+.visible-table th, .visible-table td {
+  @apply px-6 py-4 text-left border border-purple-500;
+  color: #FFFFFF !important;
+}
+
+.visible-table th {
+  @apply font-semibold bg-purple-800;
+}
+
+.visible-table tbody tr {
+  @apply bg-gray-900/50;
+}
+
+.visible-table tbody tr:nth-child(even) {
+  @apply bg-gray-900/60;
+}
+
+.visible-table tbody tr:hover {
+  @apply bg-purple-700/40;
+}
+
+.card {
+  @apply transition-all duration-300 transform hover:shadow-2xl;
+}

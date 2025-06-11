@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Data Analytics using Informatica Cloud</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter bg-gradient-to-br from-black to-purple-950 text-gray-300">
+  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Customer Data Analytics</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Overview</a>
+        <a href="data-schema.html" class="text-gray-300 hover:text-purple-400 transition">Data Schema</a>
+        <a href="transformations.html" class="text-gray-300 hover:text-purple-400 transition">Transformations</a>
+        <a href="business-solutions.html" class="text-gray-300 hover:text-purple-400 transition">Business Solutions</a>
+        <a href="analytics.html" class="text-gray-300 hover:text-purple-400 transition">Analytics</a>
+        <a href="insights.html" class="text-gray-300 hover:text-purple-400 transition">Insights</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden p-2">
+        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-black shadow-lg">
+      <a href="index.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Overview</a>
+      <a href="data-schema.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Data Schema</a>
+      <a href="transformations.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Transformations</a>
+      <a href="business-solutions.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Business Solutions</a>
+      <a href="analytics.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Analytics</a>
+      <a href="insights.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Insights</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-16">
+    <section class="hero text-center py-16 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-2xl shadow-2xl">
+      <h2 class="text-4xl font-extrabold mb-4">Customer Data Analytics with Informatica Cloud</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">Transform raw customer data into actionable insights with our cutting-edge ETL pipeline.</p>
+    </section>
+
+    <section class="my-12 card bg-transparent p-6 rounded-xl">
+      <h2 class="text-3xl font-bold text-white mb-6">Project Overview</h2>
+      <p class="text-gray-300 mb-4">In today’s data-driven landscape, businesses often struggle with scattered, incomplete, and inconsistent customer data coming from multiple platforms like CRM systems, e-commerce portals, support systems, and marketing tools.</p>
+      <p class="text-gray-300 mb-4">Our project, Customer Data Analytics using Informatica Cloud, is aimed at addressing this challenge by building a robust and scalable ETL pipeline using Informatica to transform raw customer data into actionable insights. The solution consolidates raw customer data from different domains into a unified view suitable for analytics ready format.</p>
+      <h3 class="text-xl font-semibold text-purple-300 mb-2">Objectives</h3>
+      <ul class="list-disc list-inside text-gray-300 mt-2">
+        <li>To extract customer data from CRM, e-commerce, support, and marketing systems.</li>
+        <li>To clean, transform, and standardize data using Informatica Cloud transformations.</li>
+        <li>To integrate datasets into a unified schema for deeper behavioral analysis.</li>
+        <li>To compute customer metrics like total purchases, support interactions, and campaign responses.</li>
+        <li>To improve data accessibility for business intelligence and decision-making.</li>
+      </ul>
+      <h3 class="text-2xl font-semibold text-purple-300 mt-8 mb-4">Team Members</h3>
+      <ul class="list-disc list-inside text-gray-300">
+        <li>Abhinandan Onajol – 02FE22BCI003</li>
+        <li>Jaganath Malode – 02FE22BCI018</li>
+        <li>Varun Gani – 02FE22BCI056</li>
+      </ul>
+      <h3 class="text-2xl font-semibold text-purple-300 mt-8 mb-4">Guide</h3>
+      <p class="text-gray-300">Prof. Anita Kenchannavar<br>Department of Computer Science and Engineering (AI)<br>KLE Technological University, Belagavi</p>
+    </section>
+  </main>
+
+  <footer class="bg-black text-gray-300 py-6 text-center">
+    <p>© 2025 Abhinandan Onajol & Team</p>
+  </footer>
+  <footer class="bg-black text-gray-300 py-4 text-center text-sm">
+    <p>Made by Abhs28 </p>
+  </footer>
+
+  <script>
+    // GSAP Animations
+    gsap.from(".hero", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+    gsap.from(".card", { duration: 1, y: 30, opacity: 0, stagger: 0.2, ease: "power3.out", delay: 0.5 });
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      gsap.from(mobileMenu.children, { duration: 0.3, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out" });
+    });
+  </script>
+</body>
+</html>
