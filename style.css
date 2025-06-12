@@ -1,32 +1,63 @@
+/* Removed color: #FFFFFF !important from table cells and headers */
+/* Basic body styling */
 body {
-  @apply min-h-screen;
+  @apply min-h-screen bg-white text-gray-800;
 }
 
+/* Visible table styling */
 .visible-table {
-  @apply border border-purple-500 text-base font-medium;
+  @apply border border-purple-500 text-base font-medium bg-white;
 }
 
-.visible-table th, .visible-table td {
+.visible-table th,
+.visible-table td {
   @apply px-6 py-4 text-left border border-purple-500;
-  color: #FFFFFF !important;
+  /* Removed color override to inherit text color from parent */
 }
 
 .visible-table th {
-  @apply font-semibold bg-purple-800;
+  @apply font-semibold bg-purple-100 text-purple-800;
 }
 
 .visible-table tbody tr {
-  @apply bg-gray-900/50;
+  background-color: rgba(243 244 246 / 0.6); /* Tailwind gray-100 with opacity */
 }
 
 .visible-table tbody tr:nth-child(even) {
-  @apply bg-gray-900/60;
+  background-color: rgba(229 231 235 / 0.8); /* Tailwind gray-200 with opacity */
 }
 
 .visible-table tbody tr:hover {
-  @apply bg-purple-700/40;
+  @apply bg-purple-200;
+  color: #3c096c; /* Dark purple text on hover */
 }
 
+/* Card hover effect */
 .card {
-  @apply transition-all duration-300 transform hover:shadow-2xl;
+  @apply transition-all duration-300 transform hover:shadow-2xl bg-white;
+}
+
+/* Ensure container and text inherit */
+.container {
+  color: inherit;
+}
+
+/* Scrollbars for tables on overflow */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 #f3f4f6;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #a855f7;
+  border-radius: 10px;
+  border: 2px solid #f3f4f6;
 }

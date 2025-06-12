@@ -1,86 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Customer Analytics - Informatica Cloud</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-inter bg-gradient-to-br from-black to-purple-950 text-gray-300">
-  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50">
+<body class="font-inter bg-white text-gray-800">
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Customer Data Analytics</h1>
+      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+        Customer Data Analytics
+      </h1>
       <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Overview</a>
-        <a href="data-schema.html" class="text-gray-300 hover:text-purple-400 transition">Data Schema</a>
-        <a href="transformations.html" class="text-gray-300 hover:text-purple-400 transition">Transformations</a>
-        <a href="business-solutions.html" class="text-gray-300 hover:text-purple-400 transition">Business Solutions</a>
-        <a href="analytics.html" class="text-gray-300 hover:text-purple-400 transition">Analytics</a>
-        <a href="insights.html" class="text-gray-300 hover:text-purple-400 transition">Insights</a>
+        <a href="index.html" class="text-gray-800 hover:text-purple-600 transition">Overview</a>
+        <a href="data-schema.html" class="text-gray-800 hover:text-purple-600 transition">Data Schema</a>
+        <a href="transformations.html" class="text-gray-800 hover:text-purple-600 transition">Transformations</a>
+        <a href="business-solutions.html" class="text-gray-800 hover:text-purple-600 transition">Business Solutions</a>
+        <a href="analytics.html" class="text-gray-800 hover:text-purple-600 transition">Analytics</a>
+        <a href="insights.html" class="text-gray-800 hover:text-purple-600 transition">Insights</a>
       </nav>
-      <button id="menu-toggle" class="md:hidden p-2">
-        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-black shadow-lg">
-      <a href="index.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Overview</a>
-      <a href="data-schema.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Data Schema</a>
-      <a href="transformations.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Transformations</a>
-      <a href="business-solutions.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Business Solutions</a>
-      <a href="analytics.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Analytics</a>
-      <a href="insights.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Insights</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border border-gray-200">
+      <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Overview</a>
+      <a href="data-schema.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Data Schema</a>
+      <a href="transformations.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Transformations</a>
+      <a href="business-solutions.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Business Solutions</a>
+      <a href="analytics.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Analytics</a>
+      <a href="insights.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Insights</a>
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-16">
-    <section class="hero text-center py-16 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-2xl shadow-2xl">
-      <h2 class="text-4xl font-extrabold mb-4">Customer Analytics Dashboard</h2>
-      <p class="text-lg mb-6 max-w-2xl mx-auto">Visualize actionable insights to understand customer behavior and drive business growth.</p>
+  <main class="container mx-auto px-4 py-24">
+    <section class="hero text-center py-20 bg-gradient-to-r from-purple-100 to-pink-100 text-gray-900 rounded-2xl shadow-lg">
+      <h2 class="text-5xl font-extrabold mb-4">Customer Analytics Dashboard</h2>
+      <p class="text-xl mb-6 max-w-2xl mx-auto">
+        Visualize actionable insights to understand customer behavior and drive business growth.
+      </p>
     </section>
 
-    <section class="my-12 card bg-transparent p-6 rounded-xl">
-      <h2 class="text-3xl font-bold text-white mb-6">Customer Analytics Dashboard</h2>
-      <p class="text-gray-300 mb-4">This section visualizes actionable insights obtained after transforming and analyzing customer data. These graphs highlight behavioral trends, value segmentation, and engagement preferences.</p>
+    <section class="my-16 card bg-white p-8 rounded-xl shadow-md">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">Customer Analytics Dashboard</h2>
+      <p class="text-gray-700 mb-4">
+        This section visualizes actionable insights obtained after transforming and analyzing customer data. These graphs highlight behavioral trends, value segmentation, and engagement preferences.
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Customer Distribution by Country</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Customer Distribution by Country</h3>
           <canvas id="countryChart"></canvas>
-          <p class="text-gray-300 mt-4">This chart shows the geographic distribution of customers across countries. It's useful for prioritizing regional campaigns and targeting high-density areas more effectively.</p>
+          <p class="text-gray-700 mt-4">
+            This chart shows the geographic distribution of customers across countries. It's useful for prioritizing regional campaigns and targeting high-density areas more effectively.
+          </p>
         </div>
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Distribution of Interaction Channels</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Distribution of Interaction Channels</h3>
           <canvas id="channelChart"></canvas>
-          <p class="text-gray-300 mt-4">It shows how customers engage with the company (email, phone, social media, etc.). Understanding channel preferences improves service and messaging strategies.</p>
+          <p class="text-gray-700 mt-4">
+            It shows how customers engage with the company (email, phone, social media, etc.). Understanding channel preferences improves service and messaging strategies.
+          </p>
         </div>
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Total Purchase Amount by Country</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Total Purchase Amount by Country</h3>
           <canvas id="purchaseChart"></canvas>
-          <p class="text-gray-300 mt-4">This visual illustrates where the most revenue is being generated geographically. It helps identify the most valuable regions from a revenue standpoint.</p>
+          <p class="text-gray-700 mt-4">
+            This visual illustrates where the most revenue is being generated geographically. It helps identify the most valuable regions from a revenue standpoint.
+          </p>
         </div>
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Preferred Payment Methods</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Preferred Payment Methods</h3>
           <canvas id="paymentChart"></canvas>
-          <p class="text-gray-300 mt-4">Knowing which payment methods are most commonly used helps streamline checkout processes and support widely used gateways (e.g., cards, UPI, wallets).</p>
+          <p class="text-gray-700 mt-4">
+            Knowing which payment methods are most commonly used helps streamline checkout processes and support widely used gateways (e.g., cards, UPI, wallets).
+          </p>
         </div>
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Customer Value vs. Tenure</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Customer Value vs. Tenure</h3>
           <canvas id="valueTenureChart"></canvas>
-          <p class="text-gray-300 mt-4">This chart compares how much customers have spent over time. It helps identify long-term loyal customers versus new high-value ones for targeted retention.</p>
+          <p class="text-gray-700 mt-4">
+            This chart compares how much customers have spent over time. It helps identify long-term loyal customers versus new high-value ones for targeted retention.
+          </p>
         </div>
-        <div class="card bg-transparent p-4 rounded-lg">
-          <h3 class="text-xl font-semibold text-purple-300 mb-4">Interaction Types by Channel</h3>
+        <div class="card bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-purple-700 mb-4">Interaction Types by Channel</h3>
           <canvas id="interactionChart"></canvas>
-          <p class="text-gray-300 mt-4">This analysis breaks down support or marketing interactions by type (e.g., complaint, feedback, purchase) and channel, which helps in allocating resources and training accordingly.</p>
+          <p class="text-gray-700 mt-4">
+            This analysis breaks down support or marketing interactions by type (e.g., complaint, feedback, purchase) and channel, which helps in allocating resources and training accordingly.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-black text-gray-300 py-6 text-center">
+  <footer class="bg-gray-100 text-gray-600 py-6 text-center border-t border-gray-200">
     <p>© 2025 Abhinandan Onajol & Team</p>
   </footer>
 
@@ -90,10 +110,10 @@
     gsap.from(".card", { duration: 1, y: 30, opacity: 0, stagger: 0.2, ease: "power3.out", delay: 0.5 });
 
     // Mobile Menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
       gsap.from(mobileMenu.children, { duration: 0.3, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out" });
     });
 
@@ -113,10 +133,10 @@
       },
       options: {
         scales: {
-          y: { beginAtZero: true, ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } },
-          x: { ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } }
+          y: { beginAtZero: true, ticks: { color: '#111' }, grid: { color: '#e5e7eb' } },
+          x: { ticks: { color: '#111' }, grid: { color: '#e5e7eb' } }
         },
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
 
@@ -131,7 +151,7 @@
         }]
       },
       options: {
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
 
@@ -150,10 +170,10 @@
       },
       options: {
         scales: {
-          y: { beginAtZero: true, ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } },
-          x: { ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } }
+          y: { beginAtZero: true, ticks: { color: '#111' }, grid: { color: '#e5e7eb' } },
+          x: { ticks: { color: '#111' }, grid: { color: '#e5e7eb' } }
         },
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
 
@@ -168,7 +188,7 @@
         }]
       },
       options: {
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
 
@@ -192,17 +212,17 @@
       options: {
         scales: {
           x: {
-            title: { display: true, text: 'Tenure (Months)', color: '#D1D5DB' },
-            ticks: { color: '#D1D5DB' },
-            grid: { color: '#4B5563' }
+            title: { display: true, text: 'Tenure (Months)', color: '#111' },
+            ticks: { color: '#111' },
+            grid: { color: '#e5e7eb' }
           },
           y: {
-            title: { display: true, text: 'Total Spent ($)', color: '#D1D5DB' },
-            ticks: { color: '#D1D5DB' },
-            grid: { color: '#4B5563' }
+            title: { display: true, text: 'Total Spent ($)', color: '#111' },
+            ticks: { color: '#111' },
+            grid: { color: '#e5e7eb' }
           }
         },
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
 
@@ -219,10 +239,10 @@
       },
       options: {
         scales: {
-          y: { beginAtZero: true, ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } },
-          x: { ticks: { color: '#D1D5DB' }, grid: { color: '#4B5563' } }
+          y: { beginAtZero: true, ticks: { color: '#111' }, grid: { color: '#e5e7eb' } },
+          x: { ticks: { color: '#111' }, grid: { color: '#e5e7eb' } }
         },
-        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+        plugins: { legend: { labels: { color: '#111' } } }
       }
     });
   </script>

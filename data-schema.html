@@ -1,128 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Data Schema - Customer Data Analytics</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-inter bg-gradient-to-br from-black to-purple-950 text-gray-300">
-  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50">
+<body class="font-inter bg-white text-gray-800">
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Customer Data Analytics</h1>
+      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+        Customer Data Analytics
+      </h1>
       <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Overview</a>
-        <a href="data-schema.html" class="text-gray-300 hover:text-purple-400 transition">Data Schema</a>
-        <a href="transformations.html" class="text-gray-300 hover:text-purple-400 transition">Transformations</a>
-        <a href="business-solutions.html" class="text-gray-300 hover:text-purple-400 transition">Business Solutions</a>
-        <a href="analytics.html" class="text-gray-300 hover:text-purple-400 transition">Analytics</a>
-        <a href="insights.html" class="text-gray-300 hover:text-purple-400 transition">Insights</a>
+        <a href="index.html" class="text-gray-800 hover:text-purple-600 transition">Overview</a>
+        <a href="data-schema.html" class="text-gray-800 hover:text-purple-600 transition">Data Schema</a>
+        <a href="transformations.html" class="text-gray-800 hover:text-purple-600 transition">Transformations</a>
+        <a href="business-solutions.html" class="text-gray-800 hover:text-purple-600 transition">Business Solutions</a>
+        <a href="analytics.html" class="text-gray-800 hover:text-purple-600 transition">Analytics</a>
+        <a href="insights.html" class="text-gray-800 hover:text-purple-600 transition">Insights</a>
       </nav>
-      <button id="menu-toggle" class="md:hidden p-2">
-        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
+        <svg
+          class="w-6 h-6 text-gray-800"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-black shadow-lg">
-      <a href="index.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Overview</a>
-      <a href="data-schema.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Data Schema</a>
-      <a href="transformations.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Transformations</a>
-      <a href="business-solutions.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Business Solutions</a>
-      <a href="analytics.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Analytics</a>
-      <a href="insights.html" class="block px-4 py-2 text-gray-300 hover:bg-purple-900">Insights</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border border-gray-200">
+      <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Overview</a>
+      <a href="data-schema.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Data Schema</a>
+      <a href="transformations.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Transformations</a>
+      <a href="business-solutions.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Business Solutions</a>
+      <a href="analytics.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Analytics</a>
+      <a href="insights.html" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Insights</a>
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-16">
-    <section class="hero text-center py-16 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-2xl shadow-2xl">
-      <h2 class="text-4xl font-extrabold mb-4">Data Schema</h2>
-      <p class="text-lg mb-6 max-w-2xl mx-auto">Explore the structure of our datasets and how they are interconnected for powerful analytics.</p>
+  <main class="container mx-auto px-4 py-24">
+    <section class="hero text-center py-20 bg-gradient-to-r from-purple-100 to-pink-100 text-gray-900 rounded-2xl shadow-lg">
+      <h2 class="text-5xl font-extrabold mb-4">Data Schema</h2>
+      <p class="text-xl mb-6 max-w-2xl mx-auto">
+        Explore the structure of our datasets and how they are interconnected for powerful analytics.
+      </p>
     </section>
 
-    <section class="my-12 card bg-transparent p-6 rounded-xl">
-      <h2 class="text-3xl font-bold text-white mb-6">Data Schema</h2>
-      <p class="text-gray-300 mb-4">Below is the schema of how our datasets are related:</p>
+    <section class="my-16 card bg-white p-8 rounded-xl shadow-md space-y-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">Data Schema</h2>
+      <p class="text-gray-700 mb-6">
+        Below is the schema of how our datasets are related:
+      </p>
+
       <div class="space-y-8">
         <div>
-          <h4 class="text-2xl font-semibold text-purple-600">Customer Data</h4>
-          <ul class="list-disc list-inside text-gray-300">
+          <h4 class="text-3xl font-semibold text-purple-700 mb-4">Customer Data</h4>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
             <li>customer_id - VARCHAR(10) PRIMARY KEY</li>
             <li>first_name - VARCHAR(50)</li>
             <li>last_name - VARCHAR(50)</li>
-            <li>EVS - VARCHAR(100)</li>
+            <li>email - VARCHAR(100)</li>
             <li>phone_number - VARCHAR(15)</li>
             <li>created_date - DATE</li>
             <li>country_id - VARCHAR(5)</li>
           </ul>
-          <h5 class="text-lg font-semibold text-purple-600 mt-4 mb-2">Sample Records</h5>
-          <div class="overflow-x-auto">
+          <h5 class="text-xl font-semibold text-purple-700 mt-6 mb-3">Sample Records</h5>
+          <div class="overflow-x-auto rounded-lg border border-gray-300">
             <table class="w-full visible-table">
               <thead>
-                <tr class="bg-purple-200">
-                  <th>Customer ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Created Date</th>
-                  <th>Country</th>
+                <tr class="bg-purple-200 text-gray-900">
+                  <th class="px-4 py-2">Customer ID</th>
+                  <th class="px-4 py-2">First Name</th>
+                  <th class="px-4 py-2">Last Name</th>
+                  <th class="px-4 py-2">Email</th>
+                  <th class="px-4 py-2">Phone Number</th>
+                  <th class="px-4 py-2">Created Date</th>
+                  <th class="px-4 py-2">Country</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>CUST001</td>
-                  <td>Alice</td>
-                  <td>Smith</td>
-                  <td>alice.smith@example.com</td>
-                  <td>+1234567890</td>
-                  <td>2025-01-10</td>
-                  <td>USA</td>
+                  <td class="border px-4 py-2">CUST001</td>
+                  <td class="border px-4 py-2">Alice</td>
+                  <td class="border px-4 py-2">Smith</td>
+                  <td class="border px-4 py-2">alice.smith@example.com</td>
+                  <td class="border px-4 py-2">+1234567890</td>
+                  <td class="border px-4 py-2">2025-01-10</td>
+                  <td class="border px-4 py-2">USA</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">Bob</td>
+                  <td class="border px-4 py-2">Jones</td>
+                  <td class="border px-4 py-2">bob.jones@example.com</td>
+                  <td class="border px-4 py-2">+1987654321</td>
+                  <td class="border px-4 py-2">2025-02-15</td>
+                  <td class="border px-4 py-2">Canada</td>
                 </tr>
                 <tr>
-                  <td>CUST002</td>
-                  <td>Bob</td>
-                  <td>Jones</td>
-                  <td>bob.jones@example.com</td>
-                  <td>+1987654321</td>
-                  <td>2025-02-15</td>
-                  <td>Canada</td>
+                  <td class="border px-4 py-2">CUST003</td>
+                  <td class="border px-4 py-2">Charlie</td>
+                  <td class="border px-4 py-2">Brown</td>
+                  <td class="border px-4 py-2">charlie.brown@example.com</td>
+                  <td class="border px-4 py-2">+1472583690</td>
+                  <td class="border px-4 py-2">2025-03-20</td>
+                  <td class="border px-4 py-2">UK</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CUST004</td>
+                  <td class="border px-4 py-2">David</td>
+                  <td class="border px-4 py-2">Wilson</td>
+                  <td class="border px-4 py-2">david.wilson@example.com</td>
+                  <td class="border px-4 py-2">+1122334455</td>
+                  <td class="border px-4 py-2">2025-04-25</td>
+                  <td class="border px-4 py-2">Australia</td>
                 </tr>
                 <tr>
-                  <td>CUST003</td>
-                  <td>Charlie</td>
-                  <td>Brown</td>
-                  <td>charlie.brown@example.com</td>
-                  <td>+1472583690</td>
-                  <td>2025-03-20</td>
-                  <td>UK</td>
-                </tr>
-                <tr>
-                  <td>CUST004</td>
-                  <td>David</td>
-                  <td>Wilson</td>
-                  <td>david.wilson@example.com</td>
-                  <td>+1122334455</td>
-                  <td>2025-04-25</td>
-                  <td>Australia</td>
-                </tr>
-                <tr>
-                  <td>CUST005</td>
-                  <td>Eva</td>
-                  <td>Taylor</td>
-                  <td>eva.taylor@example.com</td>
-                  <td>+1098765432</td>
-                  <td>2025-05-01</td>
-                  <td>Germany</td>
+                  <td class="border px-4 py-2">CUST005</td>
+                  <td class="border px-4 py-2">Eva</td>
+                  <td class="border px-4 py-2">Taylor</td>
+                  <td class="border px-4 py-2">eva.taylor@example.com</td>
+                  <td class="border px-4 py-2">+1098765432</td>
+                  <td class="border px-4 py-2">2025-05-01</td>
+                  <td class="border px-4 py-2">Germany</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
         <div>
-          <h4 class="text-2xl font-semibold text-purple-600">2. ecommerce_purchases</h4>
-          <ul class="list-disc list-inside text-gray-300">
+          <h4 class="text-3xl font-semibold text-purple-700 mb-4">E-commerce Purchases</h4>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
             <li>order_id - VARCHAR(10) PRIMARY KEY</li>
             <li>customer_id - VARCHAR(10), FOREIGN KEY REFERENCES customer_crm(customer_id)</li>
             <li>product_id - VARCHAR(10)</li>
@@ -130,67 +146,68 @@
             <li>purchase_date - DATE</li>
             <li>payment_method - VARCHAR(50)</li>
           </ul>
-          <h5 class="text-lg font-semibold text-purple-600 mt-4 mb-2">Sample Records</h5>
-          <div class="overflow-x-auto">
+          <h5 class="text-xl font-semibold text-purple-700 mt-6 mb-3">Sample Records</h5>
+          <div class="overflow-x-auto rounded-lg border border-gray-300">
             <table class="w-full visible-table">
               <thead>
-                <tr class="bg-purple-200">
-                  <th>Order ID</th>
-                  <th>Customer ID</th>
-                  <th>Product ID</th>
-                  <th>Amount</th>
-                  <th>Purchase Date</th>
-                  <th>Payment Method</th>
+                <tr class="bg-purple-200 text-gray-900">
+                  <th class="px-4 py-2">Order ID</th>
+                  <th class="px-4 py-2">Customer ID</th>
+                  <th class="px-4 py-2">Product ID</th>
+                  <th class="px-4 py-2">Amount</th>
+                  <th class="px-4 py-2">Purchase Date</th>
+                  <th class="px-4 py-2">Payment Method</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>ORD001</td>
-                  <td>CUST001</td>
-                  <td>PROD101</td>
-                  <td>1205.85</td>
-                  <td>2025-05-22</td>
-                  <td>Credit Card</td>
+                  <td class="border px-4 py-2">ORD001</td>
+                  <td class="border px-4 py-2">CUST001</td>
+                  <td class="border px-4 py-2">PROD101</td>
+                  <td class="border px-4 py-2">1205.85</td>
+                  <td class="border px-4 py-2">2025-05-22</td>
+                  <td class="border px-4 py-2">Credit Card</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">ORD002</td>
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">PROD102</td>
+                  <td class="border px-4 py-2">600.00</td>
+                  <td class="border px-4 py-2">2025-05-23</td>
+                  <td class="border px-4 py-2">PayPal</td>
                 </tr>
                 <tr>
-                  <td>ORD002</td>
-                  <td>CUST002</td>
-                  <td>PROD102</td>
-                  <td>600.00</td>
-                  <td>2025-05-23</td>
-                  <td>PayPal</td>
+                  <td class="border px-4 py-2">ORD003</td>
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">PROD103</td>
+                  <td class="border px-4 py-2">666.62</td>
+                  <td class="border px-4 py-2">2025-05-23</td>
+                  <td class="border px-4 py-2">Credit Card</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">ORD004</td>
+                  <td class="border px-4 py-2">CUST003</td>
+                  <td class="border px-4 py-2">PROD104</td>
+                  <td class="border px-4 py-2">150.00</td>
+                  <td class="border px-4 py-2">2025-05-24</td>
+                  <td class="border px-4 py-2">Debit Card</td>
                 </tr>
                 <tr>
-                  <td>ORD003</td>
-                  <td>CUST002</td>
-                  <td>PROD103</td>
-                  <td>666.62</td>
-                  <td>2025-05-23</td>
-                  <td>Credit Card</td>
-                </tr>
-                <tr>
-                  <td>ORD004</td>
-                  <td>CUST003</td>
-                  <td>PROD104</td>
-                  <td>150.00</td>
-                  <td>2025-05-24</td>
-                  <td>Debit Card</td>
-                </tr>
-                <tr>
-                  <td>ORD005</td>
-                  <td>CUST005</td>
-                  <td>PROD105</td>
-                  <td>200.00</td>
-                  <td>2025-05-26</td>
-                  <td>Credit Card</td>
+                  <td class="border px-4 py-2">ORD005</td>
+                  <td class="border px-4 py-2">CUST005</td>
+                  <td class="border px-4 py-2">PROD105</td>
+                  <td class="border px-4 py-2">200.00</td>
+                  <td class="border px-4 py-2">2025-05-26</td>
+                  <td class="border px-4 py-2">Credit Card</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
         <div>
-          <h4 class="text-2xl font-semibold text-purple-600">3. support_tickets</h4>
-          <ul class="list-disc list-inside text-gray-300">
+          <h4 class="text-3xl font-semibold text-purple-700 mb-4">Support Tickets</h4>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
             <li>ticket_id - VARCHAR(10) PRIMARY KEY</li>
             <li>customer_id - VARCHAR(10), FOREIGN KEY REFERENCES customer_crm(customer_id)</li>
             <li>issue_type - VARCHAR(50)</li>
@@ -198,131 +215,133 @@
             <li>opened_date - DATE</li>
             <li>closed_date - DATE</li>
           </ul>
-          <h5 class="text-lg font-semibold text-purple-600 mt-4 mb-2">Sample Records</h5>
-          <div class="overflow-x-auto">
+          <h5 class="text-xl font-semibold text-purple-700 mt-6 mb-3">Sample Records</h5>
+          <div class="overflow-x-auto rounded-lg border border-gray-300">
             <table class="w-full visible-table">
               <thead>
-                <tr class="bg-purple-200">
-                  <th>Ticket ID</th>
-                  <th>Customer ID</th>
-                  <th>Issue Type</th>
-                  <th>Status</th>
-                  <th>Opened Date</th>
-                  <th>Closed Date</th>
+                <tr class="bg-purple-200 text-gray-900">
+                  <th class="px-4 py-2">Ticket ID</th>
+                  <th class="px-4 py-2">Customer ID</th>
+                  <th class="px-4 py-2">Issue Type</th>
+                  <th class="px-4 py-2">Status</th>
+                  <th class="px-4 py-2">Opened Date</th>
+                  <th class="px-4 py-2">Closed Date</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>TICK001</td>
-                  <td>CUST001</td>
-                  <td>Billing</td>
-                  <td>Open</td>
-                  <td>2025-05-20</td>
-                  <td>-</td>
+                  <td class="border px-4 py-2">TICK001</td>
+                  <td class="border px-4 py-2">CUST001</td>
+                  <td class="border px-4 py-2">Billing</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">2025-05-20</td>
+                  <td class="border px-4 py-2">-</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">TICK002</td>
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">Product Issue</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">2025-05-21</td>
+                  <td class="border px-4 py-2">-</td>
                 </tr>
                 <tr>
-                  <td>TICK002</td>
-                  <td>CUST002</td>
-                  <td>Product Issue</td>
-                  <td>Open</td>
-                  <td>2025-05-21</td>
-                  <td>-</td>
+                  <td class="border px-4 py-2">TICK003</td>
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">Technical</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">2025-05-22</td>
+                  <td class="border px-4 py-2">-</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">TICK004</td>
+                  <td class="border px-4 py-2">CUST003</td>
+                  <td class="border px-4 py-2">Delivery</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">2025-05-23</td>
+                  <td class="border px-4 py-2">-</td>
                 </tr>
                 <tr>
-                  <td>TICK003</td>
-                  <td>CUST002</td>
-                  <td>Technical</td>
-                  <td>Open</td>
-                  <td>2025-05-22</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>TICK004</td>
-                  <td>CUST003</td>
-                  <td>Delivery</td>
-                  <td>Open</td>
-                  <td>2025-05-23</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>TICK005</td>
-                  <td>CUST005</td>
-                  <td>Billing</td>
-                  <td>Resolved</td>
-                  <td>2025-05-25</td>
-                  <td>2025-05-26</td>
+                  <td class="border px-4 py-2">TICK005</td>
+                  <td class="border px-4 py-2">CUST005</td>
+                  <td class="border px-4 py-2">Billing</td>
+                  <td class="border px-4 py-2">Resolved</td>
+                  <td class="border px-4 py-2">2025-05-25</td>
+                  <td class="border px-4 py-2">2025-05-26</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
         <div>
-          <h4 class="text-2xl font-semibold text-purple-600">4. marketing_contacts</h4>
-          <ul class="list-disc list-inside text-gray-300">
+          <h4 class="text-3xl font-semibold text-purple-700 mb-4">Marketing Contacts</h4>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
             <li>campaign_id - VARCHAR(10) PRIMARY KEY</li>
             <li>customer_id - VARCHAR(10), FOREIGN KEY REFERENCES customer_crm(customer_id)</li>
             <li>channel - VARCHAR(50)</li>
             <li>interaction_date - DATE</li>
             <li>action_taken - VARCHAR(50)</li>
           </ul>
-          <h5 class="text-lg font-semibold text-purple-600 mt-4 mb-2">Sample Records</h5>
-          <div class="overflow-x-auto">
+          <h5 class="text-xl font-semibold text-purple-700 mt-6 mb-3">Sample Records</h5>
+          <div class="overflow-x-auto rounded-lg border border-gray-300">
             <table class="w-full visible-table">
               <thead>
-                <tr class="bg-purple-200">
-                  <th>Campaign ID</th>
-                  <th>Customer ID</th>
-                  <th>Channel</th>
-                  <th>Interaction Date</th>
-                  <th>Action Taken</th>
+                <tr class="bg-purple-200 text-gray-900">
+                  <th class="px-4 py-2">Campaign ID</th>
+                  <th class="px-4 py-2">Customer ID</th>
+                  <th class="px-4 py-2">Channel</th>
+                  <th class="px-4 py-2">Interaction Date</th>
+                  <th class="px-4 py-2">Action Taken</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>CAMP001</td>
-                  <td>CUST001</td>
-                  <td>Email</td>
-                  <td>2025-05-18</td>
-                  <td>Clicked</td>
+                  <td class="border px-4 py-2">CAMP001</td>
+                  <td class="border px-4 py-2">CUST001</td>
+                  <td class="border px-4 py-2">Email</td>
+                  <td class="border px-4 py-2">2025-05-18</td>
+                  <td class="border px-4 py-2">Clicked</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CAMP002</td>
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">SMS</td>
+                  <td class="border px-4 py-2">2025-05-19</td>
+                  <td class="border px-4 py-2">Ignored</td>
                 </tr>
                 <tr>
-                  <td>CAMP002</td>
-                  <td>CUST002</td>
-                  <td>SMS</td>
-                  <td>2025-05-19</td>
-                  <td>Ignored</td>
+                  <td class="border px-4 py-2">CAMP003</td>
+                  <td class="border px-4 py-2">CUST003</td>
+                  <td class="border px-4 py-2">Email</td>
+                  <td class="border px-4 py-2">2025-05-20</td>
+                  <td class="border px-4 py-2">Clicked</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CAMP004</td>
+                  <td class="border px-4 py-2">CUST004</td>
+                  <td class="border px-4 py-2">Push</td>
+                  <td class="border px-4 py-2">2025-05-21</td>
+                  <td class="border px-4 py-2">Clicked</td>
                 </tr>
                 <tr>
-                  <td>CAMP003</td>
-                  <td>CUST003</td>
-                  <td>Email</td>
-                  <td>2025-05-20</td>
-                  <td>Clicked</td>
-                </tr>
-                <tr>
-                  <td>CAMP004</td>
-                  <td>CUST004</td>
-                  <td>Push</td>
-                  <td>2025-05-21</td>
-                  <td>Clicked</td>
-                </tr>
-                <tr>
-                  <td>CAMP005</td>
-                  <td>CUST005</td>
-                  <td>Email</td>
-                  <td>2025-05-22</td>
-                  <td>Purchased</td>
+                  <td class="border px-4 py-2">CAMP005</td>
+                  <td class="border px-4 py-2">CUST005</td>
+                  <td class="border px-4 py-2">Email</td>
+                  <td class="border px-4 py-2">2025-05-22</td>
+                  <td class="border px-4 py-2">Purchased</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
         <div>
-          <h4 class="text-2xl font-semibold text-purple-600">5. customer_summary_metrics</h4>
-          <ul class="list-disc list-inside text-gray-300">
+          <h4 class="text-3xl font-semibold text-purple-700 mb-4">Customer Summary Metrics</h4>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
             <li>customer_id - VARCHAR(10) PRIMARY KEY</li>
             <li>full_name - VARCHAR(100)</li>
-            <li>EVS - VARCHAR(100)</li>
+            <li>email - VARCHAR(100)</li>
             <li>phone_number - VARCHAR(15)</li>
             <li>total_purchases - INT</li>
             <li>total_spent - DECIMAL(10,2)</li>
@@ -331,83 +350,83 @@
             <li>last_ticket_status - VARCHAR(20)</li>
             <li>last_campaign_action - VARCHAR(50)</li>
           </ul>
-          <h5 class="text-lg font-semibold text-purple-600 mt-4 mb-2">Sample Records</h5>
-          <div class="overflow-x-auto">
+          <h5 class="text-xl font-semibold text-purple-700 mt-6 mb-3">Sample Records</h5>
+          <div class="overflow-x-auto rounded-lg border border-gray-300">
             <table class="w-full visible-table">
               <thead>
-                <tr class="bg-purple-200">
-                  <th>Customer ID</th>
-                  <th>Full Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Total Purchases</th>
-                  <th>Total Spent</th>
-                  <th>Last Purchase Date</th>
-                  <th>Support Tickets</th>
-                  <th>Last Ticket Status</th>
-                  <th>Last Campaign Action</th>
+                <tr class="bg-purple-200 text-gray-900">
+                  <th class="px-4 py-2">Customer ID</th>
+                  <th class="px-4 py-2">Full Name</th>
+                  <th class="px-4 py-2">Email</th>
+                  <th class="px-4 py-2">Phone</th>
+                  <th class="px-4 py-2">Total Purchases</th>
+                  <th class="px-4 py-2">Total Spent</th>
+                  <th class="px-4 py-2">Last Purchase Date</th>
+                  <th class="px-4 py-2">Support Tickets</th>
+                  <th class="px-4 py-2">Last Ticket Status</th>
+                  <th class="px-4 py-2">Last Campaign Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>CUST001</td>
-                  <td>Alice Smith</td>
-                  <td>alice.smith@example.com</td>
-                  <td>+1234567890</td>
-                  <td>1</td>
-                  <td>1205.85</td>
-                  <td>2025-05-22</td>
-                  <td>1</td>
-                  <td>Open</td>
-                  <td>Clicked</td>
+                  <td class="border px-4 py-2">CUST001</td>
+                  <td class="border px-4 py-2">Alice Smith</td>
+                  <td class="border px-4 py-2">alice.smith@example.com</td>
+                  <td class="border px-4 py-2">+1234567890</td>
+                  <td class="border px-4 py-2">1</td>
+                  <td class="border px-4 py-2">1205.85</td>
+                  <td class="border px-4 py-2">2025-05-22</td>
+                  <td class="border px-4 py-2">1</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">Clicked</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CUST002</td>
+                  <td class="border px-4 py-2">Bob Jones</td>
+                  <td class="border px-4 py-2">bob.jones@example.com</td>
+                  <td class="border px-4 py-2">+1987654321</td>
+                  <td class="border px-4 py-2">2</td>
+                  <td class="border px-4 py-2">1266.62</td>
+                  <td class="border px-4 py-2">2025-05-23</td>
+                  <td class="border px-4 py-2">2</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">Ignored</td>
                 </tr>
                 <tr>
-                  <td>CUST002</td>
-                  <td>Bob Jones</td>
-                  <td>bob.jones@example.com</td>
-                  <td>+1987654321</td>
-                  <td>2</td>
-                  <td>1266.62</td>
-                  <td>2025-05-23</td>
-                  <td>2</td>
-                  <td>Open</td>
-                  <td>Ignored</td>
+                  <td class="border px-4 py-2">CUST003</td>
+                  <td class="border px-4 py-2">Charlie Brown</td>
+                  <td class="border px-4 py-2">charlie.brown@example.com</td>
+                  <td class="border px-4 py-2">+1472583690</td>
+                  <td class="border px-4 py-2">5</td>
+                  <td class="border px-4 py-2">750.73</td>
+                  <td class="border px-4 py-2">2025-05-24</td>
+                  <td class="border px-4 py-2">3</td>
+                  <td class="border px-4 py-2">Open</td>
+                  <td class="border px-4 py-2">Clicked</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">CUST004</td>
+                  <td class="border px-4 py-2">David Wilson</td>
+                  <td class="border px-4 py-2">david.wilson@example.com</td>
+                  <td class="border px-4 py-2">+1122334455</td>
+                  <td class="border px-4 py-2">3</td>
+                  <td class="border px-4 py-2">1718.99</td>
+                  <td class="border px-4 py-2">2025-05-25</td>
+                  <td class="border px-4 py-2">0</td>
+                  <td class="border px-4 py-2">Resolved</td>
+                  <td class="border px-4 py-2">Clicked</td>
                 </tr>
                 <tr>
-                  <td>CUST003</td>
-                  <td>Charlie Brown</td>
-                  <td>charlie.brown@example.com</td>
-                  <td>+1472583690</td>
-                  <td>5</td>
-                  <td>750.73</td>
-                  <td>2025-05-24</td>
-                  <td>3</td>
-                  <td>Open</td>
-                  <td>Clicked</td>
-                </tr>
-                <tr>
-                  <td>CUST004</td>
-                  <td>David Wilson</td>
-                  <td>david.wilson@example.com</td>
-                  <td>+1122334455</td>
-                  <td>3</td>
-                  <td>1718.99</td>
-                  <td>2025-05-25</td>
-                  <td>0</td>
-                  <td>Resolved</td>
-                  <td>Clicked</td>
-                </tr>
-                <tr>
-                  <td>CUST005</td>
-                  <td>Eva Taylor</td>
-                  <td>eva.taylor@example.com</td>
-                  <td>+1098765432</td>
-                  <td>4</td>
-                  <td>665.23</td>
-                  <td>2025-05-26</td>
-                  <td>2</td>
-                  <td>Resolved</td>
-                  <td>Purchased</td>
+                  <td class="border px-4 py-2">CUST005</td>
+                  <td class="border px-4 py-2">Eva Taylor</td>
+                  <td class="border px-4 py-2">eva.taylor@example.com</td>
+                  <td class="border px-4 py-2">+1098765432</td>
+                  <td class="border px-4 py-2">4</td>
+                  <td class="border px-4 py-2">665.23</td>
+                  <td class="border px-4 py-2">2025-05-26</td>
+                  <td class="border px-4 py-2">2</td>
+                  <td class="border px-4 py-2">Resolved</td>
+                  <td class="border px-4 py-2">Purchased</td>
                 </tr>
               </tbody>
             </table>
@@ -417,7 +436,7 @@
     </section>
   </main>
 
-  <footer class="bg-black text-gray-300 py-6 text-center">
+  <footer class="bg-gray-100 text-gray-600 py-6 text-center border-t border-gray-200">
     <p>© 2025 Abhinandan Onajol & Team</p>
   </footer>
 
@@ -427,10 +446,10 @@
     gsap.from(".card", { duration: 1, y: 30, opacity: 0, stagger: 0.2, ease: "power3.out", delay: 0.5 });
 
     // Mobile Menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
       gsap.from(mobileMenu.children, { duration: 0.3, y: 20, opacity: 0, stagger: 0.1, ease: "power2.out" });
     });
   </script>
