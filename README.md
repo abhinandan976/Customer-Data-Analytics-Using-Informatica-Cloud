@@ -77,5 +77,8 @@ This project is for educational and demonstration purposes only.
 **Abhinandan Onajol**  
 [GitHub](https://github.com/abhinandan976) | [LinkedIn](https://www.linkedin.com/in/abhinandan_onajol)  
 
+**Varun Gani**  
+[GitHub](https://github.com/varungani) | [LinkedIn](https://www.linkedin.com/in/varun-gani-59971a258/)  
+
 ---
 
