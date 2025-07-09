@@ -54,12 +54,6 @@ Designed as part of an academic course project, the pipeline enables organizatio
 
 ---
 
-## 📷 Screenshots
-
-> *(Add screenshots of your ETL workflows, dashboards, or data model visualizations here if available)*
-
----
-
 ## 🚀 Getting Started
 
 While this project involves proprietary cloud tools (Informatica IICS), the demo and design concepts can be reviewed via the live site or documentation in this repo.
