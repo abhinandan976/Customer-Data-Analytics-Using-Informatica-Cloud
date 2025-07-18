@@ -18,7 +18,7 @@ Designed as part of an academic course project, the pipeline enables organizatio
 
 ## 💡 Key Features
 
-- 🔁 **Cloud-Based ETL(Extract Transform) Pipeline**  
+- 🔁 **Cloud-Based ETL(Extract Transform and Load) Pipeline**  
   Built with Informatica IICS for scalable and reusable data integrations.
 
 - 🧼 **Data Cleansing & Deduplication**  
