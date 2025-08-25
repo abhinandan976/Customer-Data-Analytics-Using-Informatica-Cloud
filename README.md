@@ -1,7 +1,7 @@
 # 🌐 Customer Data Analytics using Informatica Cloud
 
 **Duration:** May 2025 – June 2025  
-**Institution:** KLE Technological University, Hubballi (India)  
+**Institution:** KLE Technological University, Hubballi (India) KLEMSSCET
 **Team Size:** 3  
 **Mentor:** Prof. Anita Kenchannavar  
 **Live Demo:** [abhs28.netlify.app](https://abhs28.netlify.app)
